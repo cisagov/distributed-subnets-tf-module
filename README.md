@@ -13,7 +13,7 @@ the region where the VPC is being deployed.
 module "vpc" {
   source = "github.com/cisagov/vpc-with-distributed-subnets-tf-module"
 
-  cidr_block            = "10.10.0.0/16"
+  cidr_block = "10.10.0.0/16"
   subnet_cidr_blocks = [
     "10.10.1.0/24",
     "10.10.2.0/24",
@@ -27,7 +27,7 @@ module "vpc" {
 
 ## Examples ##
 
-* [Deploying into the default VPC](https://github.com/cisagov/vpc-with-distributed-subnets-tf-module/tree/develop/examples/default_vpc)
+* [Basic usage](https://github.com/cisagov/vpc-with-distributed-subnets-tf-module/tree/develop/examples/basic_usage)
 
 ## Inputs ##
 
