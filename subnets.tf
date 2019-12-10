@@ -11,6 +11,6 @@ resource "aws_subnet" "the_subnets" {
   # behavior we want.
   availability_zone_id = element(data.aws_availability_zones.the_azs.zone_ids, count.index)
   cidr_block           = var.subnet_cidr_blocks[count.index]
-  vpc_id               = aws_vpc.the_vpc
+  vpc_id               = aws_vpc.the_vpc.id
   tags                 = var.tags
 }
