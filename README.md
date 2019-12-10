@@ -3,28 +3,21 @@
 [![GitHub Build
 Status](https://github.com/cisagov/vpc-with-distributed-subnets-tf-module/workflows/build/badge.svg)](https://github.com/cisagov/vpc-with-distributed-subnets-tf-module/actions)
 
-This is a generic skeleton project that can be used to quickly get a
-new [cisagov](https://github.com/cisagov) [Terraform
-module](https://www.terraform.io/docs/modules/index.html) GitHub
-repository started.  This skeleton project contains [licensing
-information](LICENSE), as well as [pre-commit
-hooks](https://pre-commit.com) and [GitHub
-Actions](https://github.com/features/actions) configurations
-appropriate for the major languages that we use.
-
-See [here](https://www.terraform.io/docs/modules/index.html) for more
-details on Terraform modules and the standard module structure.
+A Terraform module that creates a VPC with one or more subnets.  The
+subnets are automatically distributed across the availability zones in
+the region where the VPC is being deployed.
 
 ## Usage ##
 
 ```hcl
-module "example" {
+module "vpc" {
   source = "github.com/cisagov/vpc-with-distributed-subnets-tf-module"
 
-  aws_region            = "us-west-1"
-  aws_availability_zone = "b"
-  subnet_id             = "subnet-0123456789abcdef0"
-
+  cidr_block            = "10.10.0.0/16"
+  subnet_cidr_blocks = [
+    "10.10.1.0/24",
+    "10.10.2.0/24",
+  ]
   tags = {
     Key1 = "Value1"
     Key2 = "Value2"
@@ -40,20 +33,16 @@ module "example" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
-| aws_region | The AWS region to deploy into (e.g. us-east-1) | string | | yes |
-| aws_availability_zone | The AWS availability zone to deploy into (e.g. a, b, c, etc.) | string | | yes |
-| subnet_id | The ID of the AWS subnet to deploy into (e.g. subnet-0123456789abcdef0) | string | | yes |
+| cidr_block | The CIDR block associated with the VPC (e.g. "10.10.0.0/16") | string | | yes |
+| subnet_cidr_blocks | A list of the CIDR blocks associated with the individual subnets in the VPC (e.g. ["10.10.0.0/16", "10.11.0.0/16""]).  Note that the CIDR blocks in this list must be contained within the larger CIDR block associated with the VPC, and they must not overlap. | list(string) | | yes |
 | tags | Tags to apply to all AWS resources created | map(string) | `{}` | no |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
-| id | The EC2 instance ID |
-| arn | The EC2 instance ARN |
-| availability_zone | The AZ where the EC2 instance is deployed |
-| private_ip | The private IP of the EC2 instance |
-| subnet_id | The ID of the subnet where the EC2 instance is deployed |
+| vpc_id | The VPC ID |
+| subnet_ids | The subnet IDs |
 
 ## Contributing ##
 
