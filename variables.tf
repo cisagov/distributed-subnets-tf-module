@@ -1,25 +1,23 @@
 # ------------------------------------------------------------------------------
-# REQUIRED PARAMETERS
+# Required parameters
 #
 # You must provide a value for each of these parameters.
 # ------------------------------------------------------------------------------
 
-variable "aws_region" {
-  description = "The AWS region to deploy into (e.g. us-east-1)"
+variable "cidr_block" {
+  description = "The CIDR block associated with the VPC (e.g. \"10.10.0.0/16\")"
 }
 
-variable "aws_availability_zone" {
-  description = "The AWS availability zone to deploy into (e.g. a, b, c, etc.)"
-}
-
-variable "subnet_id" {
-  description = "The ID of the AWS subnet to deploy into (e.g. subnet-0123456789abcdef0)"
+variable "subnet_cidr_blocks" {
+  type        = list(string)
+  description = "A list of the CIDR blocks associated with the individual subnets in the VPC (e.g. [\"10.10.0.0/16\", \"10.11.0.0/16\"]).  Note that the CIDR blocks in this list must be contained within the larger CIDR block associated with the VPC, and they must not overlap."
 }
 
 # ------------------------------------------------------------------------------
-# OPTIONAL PARAMETERS
+# Optional parameters
 #
-# These parameters have reasonable defaults.
+# These parameters have reasonable defaults, or their requirement is
+# dependent on the values of the other parameters.
 # ------------------------------------------------------------------------------
 
 variable "tags" {
