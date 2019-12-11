@@ -4,8 +4,8 @@
 # You must provide a value for each of these parameters.
 # ------------------------------------------------------------------------------
 
-variable "cidr_block" {
-  description = "The CIDR block associated with the VPC (e.g. \"10.10.0.0/16\")"
+variable "vpc_id" {
+  description = "The ID of the VPC where the subnets are to be created (e.g. \"vpc-0123456789abcdef0\")"
 }
 
 variable "subnet_cidr_blocks" {
