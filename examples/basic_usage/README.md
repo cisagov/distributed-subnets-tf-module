@@ -1,4 +1,4 @@
-# Basic Usage of the VPC-With-Distributed-Subnets Terraform Module #
+# Basic Usage of the Distributed-Subnets Terraform Module #
 
 ## Usage ##
 
@@ -13,4 +13,5 @@ Note that this example may create resources which cost money. Run
 | Name | Description |
 |------|-------------|
 | vpc_id | The VPC ID  |
-| subnet_ids | The subnet IDs |
+| private_subnet_ids | The private subnet IDs |
+| public_subnet_ids | The public subnet IDs |
