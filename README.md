@@ -1,19 +1,19 @@
-# vpc-with-distributed-subnets-tf-module #
+# distributed-subnets-tf-module #
 
 [![GitHub Build
-Status](https://github.com/cisagov/vpc-with-distributed-subnets-tf-module/workflows/build/badge.svg)](https://github.com/cisagov/vpc-with-distributed-subnets-tf-module/actions)
+Status](https://github.com/cisagov/distributed-subnets-tf-module/workflows/build/badge.svg)](https://github.com/cisagov/distributed-subnets-tf-module/actions)
 
-A Terraform module that creates a VPC with one or more subnets.  The
+A Terraform module that creates one or more subnets inside a VPC.  The
 subnets are automatically distributed across the availability zones in
-the region where the VPC is being deployed.
+the region where the VPC is deployed.
 
 ## Usage ##
 
 ```hcl
-module "vpc" {
-  source = "github.com/cisagov/vpc-with-distributed-subnets-tf-module"
+module "subnets" {
+  source = "github.com/cisagov/distributed-subnets-tf-module"
 
-  cidr_block = "10.10.0.0/16"
+  vpc_id = "vpc-0123456789abcdef0"
   subnet_cidr_blocks = [
     "10.10.1.0/24",
     "10.10.2.0/24",
@@ -27,13 +27,13 @@ module "vpc" {
 
 ## Examples ##
 
-* [Basic usage](https://github.com/cisagov/vpc-with-distributed-subnets-tf-module/tree/develop/examples/basic_usage)
+* [Basic usage](https://github.com/cisagov/distributed-subnets-tf-module/tree/develop/examples/basic_usage)
 
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
-| cidr_block | The CIDR block associated with the VPC (e.g. "10.10.0.0/16") | string | | yes |
+| vpc_id | The ID of the VPC where the subnets are to be created (e.g. "vpc-0123456789abcdef0") | string | | yes |
 | subnet_cidr_blocks | A list of the CIDR blocks associated with the individual subnets in the VPC (e.g. ["10.10.0.0/16", "10.11.0.0/16""]).  Note that the CIDR blocks in this list must be contained within the larger CIDR block associated with the VPC, and they must not overlap. | list(string) | | yes |
 | tags | Tags to apply to all AWS resources created | map(string) | `{}` | no |
 
@@ -41,7 +41,6 @@ module "vpc" {
 
 | Name | Description |
 |------|-------------|
-| vpc_id | The VPC ID |
 | subnet_ids | The subnet IDs |
 
 ## Contributing ##
