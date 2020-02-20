@@ -33,15 +33,15 @@ module "subnets" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
-| vpc_id | The ID of the VPC where the subnets are to be created (e.g. "vpc-0123456789abcdef0") | string | | yes |
+| vpc_id | The ID of the VPC where the subnets are to be created (e.g. "vpc-0123456789abcdef0"). | string | | yes |
 | subnet_cidr_blocks | A list of the CIDR blocks associated with the individual subnets in the VPC (e.g. ["10.10.0.0/16", "10.11.0.0/16""]).  Note that the CIDR blocks in this list must be contained within the larger CIDR block associated with the VPC, and they must not overlap. | list(string) | | yes |
-| tags | Tags to apply to all AWS resources created | map(string) | `{}` | no |
+| tags | Tags to apply to all AWS resources created. | map(string) | `{}` | no |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
-| subnet_ids | The subnet IDs |
+| subnets | A map with keys equal to the subnet CIDR blocks and values equal to the subnets. |
 
 ## Contributing ##
 

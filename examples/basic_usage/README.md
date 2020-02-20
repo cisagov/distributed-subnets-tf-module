@@ -12,6 +12,6 @@ Note that this example may create resources which cost money. Run
 
 | Name | Description |
 |------|-------------|
-| vpc_id | The VPC ID  |
-| private_subnet_ids | The private subnet IDs |
-| public_subnet_ids | The public subnet IDs |
+| vpc | The VPC.  |
+| private_subnets | The private subnets. |
+| public_subnets | The public subnets. |

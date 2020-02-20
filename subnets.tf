@@ -4,13 +4,13 @@
 # ------------------------------------------------------------------------------
 
 resource "aws_subnet" "the_subnets" {
-  count = length(var.subnet_cidr_blocks)
+  for_each = toset(var.subnet_cidr_blocks)
 
   # We use element(x, i) instead of x[i] because, when i > length(x),
   # then element() returns x[i % length(x)].  This is precisely the
   # behavior we want.
-  availability_zone_id = element(data.aws_availability_zones.the_azs.zone_ids, count.index)
-  cidr_block           = var.subnet_cidr_blocks[count.index]
+  availability_zone_id = element(data.aws_availability_zones.the_azs.zone_ids, index(var.subnet_cidr_blocks, each.value))
+  cidr_block           = each.value
   vpc_id               = var.vpc_id
   tags                 = var.tags
 }
