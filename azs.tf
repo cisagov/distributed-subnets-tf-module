@@ -1,6 +1,6 @@
 # The availability zones available to the provider being used
 data "aws_availability_zones" "the_azs" {
-  blacklisted_zone_ids = [
+  exclude_zone_ids = [
     # There are no modern instance types in use1-az3; AWS has left
     # that zone behind for the most part.  See, for example, here:
     # https://www.reddit.com/r/aws/comments/g5lh7h/t3m5r5_instance_types_in_use1az3/
