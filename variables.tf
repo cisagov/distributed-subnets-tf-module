@@ -4,14 +4,14 @@
 # You must provide a value for each of these parameters.
 # ------------------------------------------------------------------------------
 
-variable "vpc_id" {
-  type        = string
-  description = "The ID of the VPC where the subnets are to be created (e.g. \"vpc-0123456789abcdef0\")"
-}
-
 variable "subnet_cidr_blocks" {
   type        = list(string)
   description = "A list of the CIDR blocks associated with the individual subnets in the VPC (e.g. [\"10.10.0.0/16\", \"10.11.0.0/16\"]).  Note that the CIDR blocks in this list must be contained within the larger CIDR block associated with the VPC, and they must not overlap."
+}
+
+variable "vpc_id" {
+  type        = string
+  description = "The ID of the VPC where the subnets are to be created (e.g. \"vpc-0123456789abcdef0\")"
 }
 
 # ------------------------------------------------------------------------------
