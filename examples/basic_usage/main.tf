@@ -1,4 +1,9 @@
 provider "aws" {
+  default_tags {
+    tags = {
+      Testing = true
+    }
+  }
   region = "us-west-1"
 }
 

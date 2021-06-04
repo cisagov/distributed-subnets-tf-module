@@ -18,10 +18,6 @@ module "subnets" {
     "10.10.1.0/24",
     "10.10.2.0/24",
   ]
-  tags = {
-    Key1 = "Value1"
-    Key2 = "Value2"
-  }
 }
 ```
 
@@ -34,21 +30,31 @@ module "subnets" {
 | Name | Version |
 |------|---------|
 | terraform | ~> 0.12.0 |
-| aws | ~> 3.0 |
+| aws | ~> 3.38 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.0 |
+| aws | ~> 3.38 |
+
+## Modules ##
+
+No modules.
+
+## Resources ##
+
+| Name | Type |
+|------|------|
+| [aws_subnet.the_subnets](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
+| [aws_availability_zones.the_azs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
 
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| subnet_cidr_blocks | A list of the CIDR blocks associated with the individual subnets in the VPC (e.g. ["10.10.0.0/16", "10.11.0.0/16"]).  Note that the CIDR blocks in this list must be contained within the larger CIDR block associated with the VPC, and they must not overlap. | `list(string)` | n/a | yes |
-| tags | Tags to apply to all AWS resources created | `map(string)` | `{}` | no |
-| vpc_id | The ID of the VPC where the subnets are to be created (e.g. "vpc-0123456789abcdef0") | `string` | n/a | yes |
+| subnet\_cidr\_blocks | A list of the CIDR blocks associated with the individual subnets in the VPC (e.g. ["10.10.0.0/16", "10.11.0.0/16"]).  Note that the CIDR blocks in this list must be contained within the larger CIDR block associated with the VPC, and they must not overlap. | `list(string)` | n/a | yes |
+| vpc\_id | The ID of the VPC where the subnets are to be created (e.g. "vpc-0123456789abcdef0") | `string` | n/a | yes |
 
 ## Outputs ##
 

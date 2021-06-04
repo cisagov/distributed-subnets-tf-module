@@ -20,9 +20,3 @@ variable "vpc_id" {
 # These parameters have reasonable defaults, or their requirement is
 # dependent on the values of the other parameters.
 # ------------------------------------------------------------------------------
-
-variable "tags" {
-  type        = map(string)
-  description = "Tags to apply to all AWS resources created"
-  default     = {}
-}
