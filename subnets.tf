@@ -12,5 +12,4 @@ resource "aws_subnet" "the_subnets" {
   availability_zone_id = element(local.sorted_az_ids, index(var.subnet_cidr_blocks, each.value))
   cidr_block           = each.value
   vpc_id               = var.vpc_id
-  tags                 = var.tags
 }

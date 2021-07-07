@@ -11,7 +11,7 @@ variable "subnet_cidr_blocks" {
 
 variable "vpc_id" {
   type        = string
-  description = "The ID of the VPC where the subnets are to be created (e.g. \"vpc-0123456789abcdef0\")"
+  description = "The ID of the VPC where the subnets are to be created (e.g. \"vpc-0123456789abcdef0\")."
 }
 
 # ------------------------------------------------------------------------------
@@ -20,9 +20,3 @@ variable "vpc_id" {
 # These parameters have reasonable defaults, or their requirement is
 # dependent on the values of the other parameters.
 # ------------------------------------------------------------------------------
-
-variable "tags" {
-  type        = map(string)
-  description = "Tags to apply to all AWS resources created"
-  default     = {}
-}
