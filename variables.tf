@@ -11,7 +11,7 @@ variable "subnet_cidr_blocks" {
 
 variable "vpc_id" {
   type        = string
-  description = "The ID of the VPC where the subnets are to be created (e.g. \"vpc-0123456789abcdef0\")"
+  description = "The ID of the VPC where the subnets are to be created (e.g. \"vpc-0123456789abcdef0\")."
 }
 
 # ------------------------------------------------------------------------------
