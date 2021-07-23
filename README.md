@@ -23,7 +23,7 @@ module "subnets" {
 
 ## Examples ##
 
-* [Basic usage](https://github.com/cisagov/distributed-subnets-tf-module/tree/develop/examples/basic_usage)
+- [Basic usage](https://github.com/cisagov/distributed-subnets-tf-module/tree/develop/examples/basic_usage)
 
 ## Requirements ##
 
