@@ -10,20 +10,23 @@ Note that this example may create resources which cost money. Run
 
 ## Requirements ##
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.13.0 |
+| aws | ~> 3.38 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| aws | ~> 3.38 |
 
 ## Modules ##
 
 | Name | Source | Version |
 |------|--------|---------|
-| private\_subnets | ../../ |  |
-| public\_subnets | ../../ |  |
+| private\_subnets | ../../ | n/a |
+| public\_subnets | ../../ | n/a |
 
 ## Resources ##
 
