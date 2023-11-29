@@ -25,18 +25,19 @@ module "subnets" {
 
 - [Basic usage](https://github.com/cisagov/distributed-subnets-tf-module/tree/develop/examples/basic_usage)
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements ##
 
 | Name | Version |
 |------|---------|
 | terraform | ~> 1.0 |
-| aws | ~> 3.38 |
+| aws | ~> 4.9 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.38 |
+| aws | ~> 4.9 |
 
 ## Modules ##
 
@@ -61,6 +62,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | subnets | A map with keys equal to the subnet CIDR blocks and values equal to the subnets. |
+<!-- END_TF_DOCS -->
 
 ## Notes ##
 
