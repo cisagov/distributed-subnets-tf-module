@@ -11,7 +11,7 @@ the region where the VPC is deployed.
 
 ```hcl
 module "subnets" {
-  source = "github.com/cisagov/distributed-subnets-tf-module"
+  source = "github.com/cisagov/distributed-subnets-tf-module?ref=v1.0.0"
 
   vpc_id = "vpc-0123456789abcdef0"
   subnet_cidr_blocks = [
