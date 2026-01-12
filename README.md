@@ -1,7 +1,8 @@
 # distributed-subnets-tf-module #
 
-[![GitHub Build
-Status](https://github.com/cisagov/distributed-subnets-tf-module/workflows/build/badge.svg)](https://github.com/cisagov/distributed-subnets-tf-module/actions)
+[![GitHub Build Status](https://github.com/cisagov/distributed-subnets-tf-module/workflows/build/badge.svg)](https://github.com/cisagov/distributed-subnets-tf-module/actions)
+[![License](https://img.shields.io/github/license/cisagov/distributed-subnets-tf-module)](https://spdx.org/licenses/)
+[![CodeQL](https://github.com/cisagov/distributed-subnets-tf-module/workflows/CodeQL/badge.svg)](https://github.com/cisagov/distributed-subnets-tf-module/actions/workflows/codeql-analysis.yml)
 
 A Terraform module that creates one or more subnets inside a VPC.  The
 subnets are automatically distributed across the availability zones in
